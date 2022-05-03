@@ -16,6 +16,7 @@
   <meta name="twitter:site" content="@r0_ppy" />
 
   <link href="css/bootstrap3.min.css" rel="stylesheet">
+  <link href="css/tlconverter.css" rel="stylesheet">
   <script type='text/javascript' src='js/jquery1.min.js'></script>
   <script type='text/javascript' src='js/bootstrap3.min.js'></script>
   <script type='text/javascript' src='js/tlconverter.js?202204160000'></script>
@@ -28,8 +29,20 @@
   <div id="dashboard" class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading tlc_panel_heading">変換前TL</div>
+          <div class="panel-body tlc_panel_body_textarea">
+            <textarea id="pre_tl" class="tlc_textarea" placeholder="こちらにタイムラインを貼り付けてください"></textarea>
+          </div>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading tlc_panel_heading">変換後TL</div>
+          <div class="panel-body tlc_panel_body_textarea"">
+            <textarea id="pre_tl" class="tlc_textarea" placeholder="こちらに返還後のタイムラインが表示されます"></textarea>
+          </div>
+        </div>
       </div>
     </div>
   </div>
