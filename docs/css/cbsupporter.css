@@ -1,11 +1,11 @@
-.tlc_panel_heading {
+.cbs_panel_heading {
     font-weight: bold;
 }
-.tlc_panel_body_textarea {
+.cbs_panel_body_textarea {
     padding: 0 0 0 0;
 }
 
-.tlc_textarea {
+.cbs_textarea {
     min-height: 100%;
     top: 0;
     bottom: 0;

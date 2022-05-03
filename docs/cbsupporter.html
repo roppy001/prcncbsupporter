@@ -2,16 +2,16 @@
 <html>
 
 <head>
-  <title>プリコネTL変換ツール</title>
+  <title>クラバト支援ツール</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="プリコネTL変換ツール" />
+  <meta property="og:title" content="クラバト支援ツール" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
 <!-- <meta property="og:image" content="" /> -->
-  <meta property="og:site_name"  content="プリコネTL変換ツール" />
-  <meta property="og:description" content="プリコネの持越しTLを計算するツール" />
+  <meta property="og:site_name"  content="クラバト支援ツール" />
+  <meta property="og:description" content="クラバトの持越しTLを計算するツール" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@r0_ppy" />
 
@@ -25,22 +25,40 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cbs_menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">クラバト支援ツール</a>
+      </div>
+      <div class="navbar-collapse collapse" id="cbs_menu">
+        <ul class="nav navbar-nav">
+          <li id="select_tlconverter" class="active"><a href="#">TL変換</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <div id="dashboard" class="container-fluid">
+  <div id="tlconverter" class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="panel panel-default">
-          <div class="panel-heading tlc_panel_heading">変換前TL</div>
-          <div class="panel-body tlc_panel_body_textarea">
-            <textarea id="pre_tl" class="tlc_textarea" placeholder="こちらにタイムラインを貼り付けてください"></textarea>
+          <div class="panel-heading cbs_panel_heading">変換前TL</div>
+          <div class="panel-body cbs_panel_body_textarea">
+            <textarea id="pre_tl" class="cbs_textarea" placeholder="こちらにタイムラインを貼り付けてください"></textarea>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6">
         <div class="panel panel-default">
-          <div class="panel-heading tlc_panel_heading">変換後TL</div>
-          <div class="panel-body tlc_panel_body_textarea"">
-            <textarea id="pre_tl" class="tlc_textarea" placeholder="こちらに返還後のタイムラインが表示されます"></textarea>
+          <div class="panel-heading cbs_panel_heading">変換後TL</div>
+          <div class="panel-body cbs_panel_body_textarea">
+            <textarea id="pre_tl" class="cbs_textarea" placeholder="こちらに返還後のタイムラインが表示されます"></textarea>
           </div>
         </div>
       </div>
