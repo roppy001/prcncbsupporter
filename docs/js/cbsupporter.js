@@ -1,7 +1,12 @@
 
+function hankakuToZenkaku(str) {
+    return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    });
+}
 function decodeTime(tstr){
-    var arr = tstr.split(':');
-    return parseInt(arr[0])*60+parseInt(arr[1]);
+    var arr = tstr.split(/[:：]/);
+    return parseInt(hankakuToZenkaku(arr[0]))*60+parseInt(hankakuToZenkaku(arr[1]));
 }
 
 function encodeTime(t){
@@ -20,13 +25,15 @@ function calculateResultTl(){
     var zeroCutFlg = $('#zero_cut').prop('checked');
 
     for(i=0;i<linearray.length;i++){
-        var tmpstr = linearray[i].replaceAll(/\d{1,2}:\d{2}/g,
+        var tmpstr = linearray[i].replaceAll(/[0-9０-９]{1,2}[:：][0-9０-９]{2}[ 　]?/g,
         function(m, offset){
+            var lastChar = m[m.length-1];
+            var isLastSpace = lastChar == ' ' || lastChar == '　';
             var t = Math.max(0, decodeTime(m) + takeoverTime - 90);
-            if (t == 0 && offset == 0) {
+            if (t == 0 && offset == 0 && isLastSpace) {
                 flg=false;
             }
-            return encodeTime(t);
+            return encodeTime(t) + (isLastSpace ? ' ' : '');
         } );
 
         if(flg || !zeroCutFlg){
