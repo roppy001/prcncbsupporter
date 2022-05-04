@@ -1,12 +1,12 @@
 
-function hankakuToZenkaku(str) {
+function zenkakuToHankaku(str) {
     return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
     });
 }
 function decodeTime(tstr){
     var arr = tstr.split(/[:：]/);
-    return parseInt(hankakuToZenkaku(arr[0]))*60+parseInt(hankakuToZenkaku(arr[1]));
+    return parseInt(zenkakuToHankaku(arr[0]))*60+parseInt(zenkakuToHankaku(arr[1]));
 }
 
 function encodeTime(t){
