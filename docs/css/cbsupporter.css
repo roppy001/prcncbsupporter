@@ -23,3 +23,13 @@
     position: relative;
     resize: none;
 }
+
+.cbs_hidden {
+    display: none;
+}
+
+.cbs_table_input {
+    width: 100%;
+    border :none;
+    outline: none;
+}

@@ -1,3 +1,4 @@
+var screenId = 0;
 
 function zenkakuToHankaku(str) {
     return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
@@ -60,7 +61,38 @@ function copyResultTl(){
 }
 
 
+// 共通制御部分
+
+function setScreen() {
+    $('#tlconverter').addClass('cbs_hidden');
+    $('#tocal').addClass('cbs_hidden');
+    $('#select_tlconverter').removeClass('active');
+    $('#select_tocal').removeClass('active');
+
+    switch(screenId) {
+        case 0:
+            $('#tlconverter').removeClass('cbs_hidden');
+            $('#select_tlconverter').addClass('active');
+            break;
+        case 1:
+            $('#tocal').removeClass('cbs_hidden');
+            $('#select_tocal').addClass('active');
+            break;
+    }
+}
+
 function initEventHandler(){
+    // タブ切り替え
+    $('#select_tlconverter').on('click',function(){
+        screenId = 0;
+        setScreen();
+    });
+    $('#select_tocal').on('click',function(){
+        screenId = 1;
+        setScreen();
+    });
+
+    // TL変換関連
     $('#paste_input_tl').on('click', pasteInputTl);
     $('#copy_result_tl1').on('click',copyResultTl);
     $('#copy_result_tl2').on('click',copyResultTl);
@@ -81,5 +113,6 @@ function initEventHandler(){
 }  
 
 $(function () {
+    setScreen();
     initEventHandler();
 });

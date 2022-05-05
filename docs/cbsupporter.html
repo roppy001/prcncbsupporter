@@ -39,11 +39,13 @@
       <div class="navbar-collapse collapse" id="cbs_menu">
         <ul class="nav navbar-nav">
           <li id="select_tlconverter" class="active"><a href="#">TL変換</a></li>
+          <li id="select_tocal"><a href="#">持越秒数計算</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- TL変換 -->
   <div id="tlconverter" class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
@@ -67,10 +69,45 @@
         <div class="panel panel-default">
           <div class="panel-heading cbs_panel_heading">変換後TL</div>
           <div class="panel-body cbs_panel_body_textarea">
-            <textarea id="post_tl" class="cbs_textarea" placeholder="こちらに変換後のTLが表示されます"></textarea>
+            <textarea id="post_tl" class="cbs_textarea" placeholder="こちらに変換後のTLが表示されます" readonly></textarea>
           </div>
         </div>
         <button id="copy_result_tl2" class="btn btn-primary hidden-xs">結果コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 持越秒数計算 -->
+  <div id="tocal" class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="input-group">
+          <span class="input-group-addon">残りHP</span>
+          <input id="takeover_time" type="number" class="form-control" min="0" max="99999" step="1" value="" placeholder="残りHP(万単位)を入力">
+        </div>
+        <table class="table">
+          <tr>
+            <th>名前</th>
+            <th>ダメージ(万単位)</th>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="A"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="B"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading cbs_panel_heading">持越計算結果</div>
+          <div class="panel-body cbs_panel_body_textarea">
+            <textarea id="to_result" class="cbs_textarea" placeholder="こちらに持越秒数計算結果が表示されます"></textarea>
+          </div>
+        </div>
+        <button id="copy_to_result" class="btn btn-primary hidden-xs">結果コピー</button>
       </div>
     </div>
   </div>
