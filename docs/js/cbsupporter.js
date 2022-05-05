@@ -33,7 +33,7 @@ function calculateResultTl(){
             if (t == 0 && offset == 0 && isLastSpace) {
                 flg=false;
             }
-            return encodeTime(t) + (isLastSpace ? ' ' : '');
+            return encodeTime(t) + (isLastSpace ? lastChar : '');
         } );
 
         if(flg || !zeroCutFlg){
