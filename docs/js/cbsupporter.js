@@ -177,7 +177,7 @@ function calculateTakeoverResult(){
         result = resultArray[resultIndex];
         var str = '';
         if (result.attackIndexArray.length==0) {
-            str += characterArray[result.targetIndex].name + 'が凸をした場合、\n'
+            str += characterArray[result.targetIndex].name + 'が凸をして90秒フルで戦闘をした場合、\n'
         }else{
             var i=0;
             for(i=0;i<result.attackIndexArray.length;i++){
