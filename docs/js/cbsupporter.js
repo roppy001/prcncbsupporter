@@ -24,7 +24,7 @@ function decodeTime(tstr){
 
 function encodeTime(t){
     s = t % 60;
-    return parseInt(t/60) + ':' + ((s < 10) ? '0' : '') + s;
+    return Math.floor(t/60) + ':' + ((s < 10) ? '0' : '') + s;
 }
 
 function calculateResultTl(){
@@ -139,7 +139,7 @@ function calculateTakeoverResult(){
         if(totalDamage + characterArray[targetIndex].damage < bossHp){
             takeoverTime = 0;
         } else{
-            takeoverTime = Math.min(90, Math.max(21, 110 - parseInt(90 * (bossHp - totalDamage) / characterArray[targetIndex].damage)));
+            takeoverTime = Math.min(90, Math.max(21, 110 - Math.floor(90 * (bossHp - totalDamage) / characterArray[targetIndex].damage)));
         }
 
         result['takeoverTime'] = takeoverTime;
