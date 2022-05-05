@@ -139,7 +139,7 @@ function calculateTakeoverResult(){
         if(totalDamage + characterArray[targetIndex].damage < bossHp){
             takeoverTime = 0;
         } else{
-            takeoverTime = Math.min(90, Math.max(21, parseInt(110 - 90 * (bossHp - totalDamage) / characterArray[targetIndex].damage)));
+            takeoverTime = Math.min(90, Math.max(21, 110 - parseInt(90 * (bossHp - totalDamage) / characterArray[targetIndex].damage)));
         }
 
         result['takeoverTime'] = takeoverTime;
