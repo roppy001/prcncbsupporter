@@ -11,7 +11,7 @@
   <meta property="og:url" content="" />
 <!-- <meta property="og:image" content="" /> -->
   <meta property="og:site_name"  content="クラバト支援ツール" />
-  <meta property="og:description" content="クラバトの持越しTLを計算するツール" />
+  <meta property="og:description" content="クラバトの持越TL変換や持越秒数の計算を行うツール" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@r0_ppy" />
 
@@ -19,7 +19,7 @@
   <link href="css/cbsupporter.css" rel="stylesheet">
   <script type='text/javascript' src='js/jquery1.min.js'></script>
   <script type='text/javascript' src='js/bootstrap3.min.js'></script>
-  <script type='text/javascript' src='js/cbsupporter.js?202205051215'></script>
+  <script type='text/javascript' src='js/cbsupporter.js?202205051900'></script>
 
 
 </head>
@@ -39,11 +39,13 @@
       <div class="navbar-collapse collapse" id="cbs_menu">
         <ul class="nav navbar-nav">
           <li id="select_tlconverter" class="active"><a href="#">TL変換</a></li>
+          <li id="select_tocal"><a href="#">持越秒数計算</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- TL変換 -->
   <div id="tlconverter" class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
@@ -67,10 +69,70 @@
         <div class="panel panel-default">
           <div class="panel-heading cbs_panel_heading">変換後TL</div>
           <div class="panel-body cbs_panel_body_textarea">
-            <textarea id="post_tl" class="cbs_textarea" placeholder="こちらに変換後のTLが表示されます"></textarea>
+            <textarea id="post_tl" class="cbs_textarea" placeholder="こちらに変換後のTLが表示されます" readonly></textarea>
           </div>
         </div>
         <button id="copy_result_tl2" class="btn btn-primary hidden-xs">結果コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 持越秒数計算 -->
+  <div id="tocal" class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="input-group">
+          <span class="input-group-addon">残りHP</span>
+          <input id="boss_hp" type="number" class="form-control" min="0" max="99999" step="1" value="" placeholder="残りHP(万単位)を入力">
+        </div>
+        <table class="table">
+          <tr>
+            <th>名前</th>
+            <th>ダメージ(万単位)</th>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="A"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="B"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="C"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="D"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="E"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="F"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="G"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+          <tr>
+            <td><input name="character_name" class="cbs_table_input" type="text" value="H"></td>
+            <td><input name="character_damage" class="cbs_table_input" type="number" min="0" max="99999" step="1" value="" placeholder="ダメージ(万単位)を入力"></td>
+          </tr>
+        </table>
+        <button id="copy_tocal_result1" class="btn btn-primary visible-xs-inline">結果コピー</button>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading cbs_panel_heading">持越計算結果</div>
+          <div class="panel-body cbs_panel_body_textarea">
+            <textarea id="tocal_result" class="cbs_textarea" placeholder="こちらに持越秒数計算結果が表示されます"></textarea>
+          </div>
+        </div>
+        <button id="copy_tocal_result2" class="btn btn-primary hidden-xs">結果コピー</button>
       </div>
     </div>
   </div>
