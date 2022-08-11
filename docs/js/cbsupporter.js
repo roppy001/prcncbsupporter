@@ -85,6 +85,7 @@ function calculateTakeoverResult(){
         c['id'] = i;
         c['name'] = $('[name="character_name"]:eq('+i+')').val();
         c['damage'] = parseIntWithEmpty($('[name="character_damage"]:eq('+i+')').val());
+        c['priority'] = $('[name="character_prior"]:eq('+i+')').prop('checked') ? 1 : 0;
 
         if(c.damage > 0) {
             characterArray.push(c);
@@ -96,9 +97,15 @@ function calculateTakeoverResult(){
         $('#tocal_result').val('');
     }
 
-    // ダメージが大きい順にソート
+    // 以下の辞書順でソート
+    // 1. 優先にチェックがついている(値が大きい)
+    // 2. ダメージが大きい
     characterArray.sort(function(a, b) {
-        return b.damage - a.damage;
+        if(a.priority != b.priority) {
+            return b.priority - a.priority;
+        } else {
+            return b.damage - a.damage;
+        }
     })
 
     // 持越計算結果を登録
@@ -259,6 +266,9 @@ function initEventHandler(){
         calculateTakeoverResult();
     });
     $('[name="character_damage"]').on('change',function(){
+        calculateTakeoverResult();
+    });
+    $('[name="character_prior"]').on('change',function(){
         calculateTakeoverResult();
     });
     $('#boss_hp').on('change',function(){
