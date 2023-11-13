@@ -278,7 +278,14 @@ function initEventHandler(){
     $('#copy_tocal_result2').on('click',copyTakeoverResult);
 }  
 
+function initValue(){
+    $('#boss_hp').val('4000');
+    $('[name="character_damage"]:eq(0)').val('5800');
+    calculateTakeoverResult();
+}
+
 $(function () {
     setScreen();
     initEventHandler();
+    initValue();
 });
